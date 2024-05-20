@@ -2,7 +2,6 @@
  * 自动埋点插件
  * 1. 检查 Program 节点，是否有引入 trackerPath，如果没有则添加默认导入
  * 2. 插入埋点代码
- * todo: 函数作用域内有和生成的埋点函数名称一样未处理。
  */
 import importModule from "@babel/helper-module-imports";
 
@@ -40,7 +39,6 @@ export default function (api, options) {
       // 插入埋点代码
       // Function 是 'ClassMethod|ArrowFunctionExpression|FunctionExpression|FunctionDeclaration' 的别名
       Function(path, state) {
-        console.log(path.toString());
         const bodyPath = path.get("body");
         if (bodyPath.isBlockStatement()) {
           // 插入埋点代码
