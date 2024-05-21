@@ -8,7 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "启动程序",
-      "program": "${workspaceFolder}\\packages\\auto-event-tracking\\src\\index.js"
+      // "program": "${workspaceFolder}\\packages\\auto-event-tracking\\src\\index.js" // 自动埋点
+      "program": "${workspaceFolder}\\packages\\auto-i18n\\src\\index.js" // 自动国际化
     }
   ]
 }
